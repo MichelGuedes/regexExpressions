@@ -1,2 +1,24 @@
-CNPJ: \d{2}.\d{3}.\d{3}/\d{4}-\d{2}
-CPF: \d{3}.\d{3}.\d{3}-\d{2}
+CNPJ: \d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}
+CPF: ^\d{3}\.\d{3}\.\d{3}\-\d{2}$
+IP: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+CEP: \d{5}\-\d{3}
+Telefone: \(\d{2}\) \d{4}-\d{4}
+Padrão para tag, com caracter opcional: </?code>
+Hora / minuto / segundo: \d{2}h\d{2}min\d{2}s
+Placa veicular: [A-Z]{3}\-[0-9]{4}
+Data por extenso: [0123]?\d\s+de\s+[A-Z][a-zç]{1,8}\s+de\s+[12]\d{3}
+
+Quantifiers:
+
+"\s" significa whitespace (tab, espaços, etc)
+"+" significa pelo menos uma vez ou mais de uma
+"*" significa zero ou mais
+"\w" significa qualquer caracter, atalho para [A-Za-z0-9_]
+"?" zero ou uma vez
+"\b" word boundary, para procurar uma palavra
+"^" serve para informar que não pode ter nada antes do char
+"$" serve para informar que não pode ter nada depois do char
+
+Regex para caçar comparações booleanas com true nos códigos fonte delphi (.pas): \s*(if)\s*\(*\s*\w+\s*\=\s*(true)\s*\)*\s*(then)
+
+( ){0,}([a-z0-9\.'_]*?)( ){0,}\=( ){0,}true( ){0,}
